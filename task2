@@ -1,0 +1,62 @@
+package game;
+
+import java.lang.*;
+import java.util.*;
+
+public class Game
+{
+    public static void Numberguessinggame()
+    {
+        Scanner sc = new Scanner(System.in);
+         //take input from user
+        
+        int number =1+(int)(100* Math.random());
+ 
+        int T = 4;
+         // T trials or number of time the game continue
+        int i, guess;
+ 
+        System.out.println("Choose the number in between 1 to 100: ");
+ 
+      
+        for(i = 0; i < T; i++) //for loop for choosing different numbers
+        {
+ 
+            System.out.println("guess any number :");
+ 
+            guess = sc.nextInt();
+            // Take input for guessing
+            
+            if (number==guess) // If the number is guessed right
+            {
+                System.out.println("Congratulation! You win " + " You guessed the number.");
+                
+            }
+           
+            else if (number>guess&&i!=T-1)
+            {
+                System.out.println("The number is " + "greater than " + guess);
+            }
+            else if (number<guess&&i!=T-1) 
+            {
+                System.out.println("The number is" + " less than " + guess);
+            }
+            
+        } 
+            if(i==T)
+            {
+            System.out.println("You have exhausted " + " T trials.");
+ 
+            System.out.println("The number was " + number);
+            }
+}
+    
+    
+    public static void main(String[]args) 
+{
+        
+    Numberguessinggame();
+}
+
+}
+
